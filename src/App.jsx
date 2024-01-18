@@ -1,20 +1,24 @@
 import './index.css'
-import Call from "../public/Icons/Call/Call.svg"
-import Mail from "../public/Icons/Mail/Mail.svg"
-import Copyright from "../public/Icons/Copyright/Copyright.svg"
-import JusticeHouse from "../public/Img/Justice-house.png"
-import VectorIcon from "../public/Icons/VectorIcon/VectorIcon.svg"
-
+// import Call from "../public/Icons/Call/Call.svg"
+// import Mail from "../public/Icons/Mail/Mail.svg"
+// import Copyright from "../public/Icons/Copyright/Copyright.svg"
+// import JusticeHouse from "../public/Img/Justice-house.png"
+// import VectorIcon from "../public/Icons/VectorIcon/VectorIcon.svg"
+import Services from "./components/Services"
 
 export default function App() {
   return (
-    <div className='flex w-full justify-center items-end h-screen '>
-      <div className='flex flex-col justify-between h-[560px] w-[719px]'>
+    <div>
+    <Services/>
+
+    {/* <div className='flex w-full justify-center items-end h-screen md:px-[8.5%] px-[5.5%] md:items-center '>
+      <div className='flex flex-col justify-between h-[560px] w-[719px]'>     
+
         <div className='w-2 h-2'></div>
 
-        <div className='flex flex-col h-[50%] justify-center items-center '>
+        <div className='flex flex-col h-[50%] items-center md:justify-center'>
 
-          <div className='flex flex-col gap-3'>
+          <div className='flex flex-col gap-3 sm:justify-between justify-between'>
             <span className='text-sm'>იუსტიციის სახლის</span>
             <span className='text-[rgba(0,0,0,0.70)] text-2xl font-bold leading-[115%] tracking-[-0.64px] '>კონტაქტი</span>
           </div>
@@ -65,9 +69,12 @@ export default function App() {
     <img src={VectorIcon} alt="Vector Icon"  className='relative pl-[2x5px]'/>
 </div>
 
+     
+
       <div className='p-0'>
         <img src={JusticeHouse} />
       </div>
+    </div> */}
     </div>
   )
 }
