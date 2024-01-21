@@ -10,7 +10,8 @@ import ArrowRightIcon from "../../public/Icons/ArrowRight/ArrowRightIcon.svg"
 
 const Services = () => {
   return (
-<div className="py-[250px] px-[200px] bg-[url('../../public/Icons/FrameImageSvg/Frame.svg')] bg-center justify-items-end bg-no-repeat max-w-[2200px]">
+<div className="py-[250px] px-[200px] justify-items-end bg-[url('../../public/Icons/FrameImageSvg/Frame.svg')] bg-right-bottom min-h-screen bg-no-repeat max-w-[2200px]">  
+  <div className="">
 
       <div className="w-[260px] ">
         <h1 className="text-32 uppercase tracking-wider leading-115 font-bold">იუსტიციის სახლის სერვისები</h1>
@@ -69,7 +70,7 @@ const Services = () => {
     </ul>
   </div>
 </div>
-
+</div>
   </div>
 
   );
