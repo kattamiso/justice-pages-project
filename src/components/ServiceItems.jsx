@@ -6,8 +6,11 @@ import {useState} from "react"
 const ServiceItems = ({ onClose }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
+  const CancelText = () => {
+        setSearchQuery('');
+  }
+
   const handleCancelClick = () => {
-    setSearchQuery('');
     onClose();
   };
   
@@ -30,7 +33,7 @@ const ServiceItems = ({ onClose }) => {
                 src={CancelIcon}
                 alt="Cancel Icon"
                 className="cursor-pointer absolute ml-[1030px]"
-                onClick={handleCancelClick}
+                onClick={CancelText}
               />
             )}
             <div className=" flex absolute ml-[1050px] left-0justify-center items-center">
