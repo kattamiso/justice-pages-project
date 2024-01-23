@@ -10,17 +10,24 @@ import ServiceItems from "./ServiceItems"
 import {useState} from "react"
 
 const Services = () => {
-   const [isOpen, setIsOpen] = useState(false)
+   const [isOpen, setIsOpen] = useState(false);
 
+   const openModal = () => {
+     setIsOpen(true);
+   };
+ 
+   const closeModal = () => {
+     setIsOpen(false);
+   };
   return (  
 <div className="py-[250px] px-[200px] justify-items-end bg-[url('../../public/Icons/FrameImageSvg/Frame.svg')] bg-right-bottom min-h-screen bg-no-repeat max-w-[2200px]">  
   <div className="">
 
-      <div className="w-[260px] ">
-        <h1 className="text-32 text-green-800 uppercase tracking-wider leading-115 font-bold">იუსტიციის სახლის სერვისები</h1>
+      <div className="w-[460px] ">
+        <h1 className="text-32 text-green-800 text-[32px] uppercase tracking-wider leading-115 font-bold">იუსტიციის სახლის სერვისები</h1>
       </div>
 
-      <div className="text-green-700 text-base font-normal w-[578px]">
+      <div className="text-black text-base font-normal w-[578px]">
         <span>იუსტიციის სახლის მიზანია მომხმარებლისათვის სახელმწიფო და კერძო სექტორის სერვისების მაღალი ხარისხით მიწოდება</span>
       </div>
      
@@ -28,7 +35,7 @@ const Services = () => {
   <div className="flex  p-[4px] h-[52px] items-start self-stretch rounded-3xl bg-white ">
     
     <ul className="flex justify-between">
- <li className="flex justify-center items-center w-[180px] rounded-3xl hover:bg-gray-300 active:bg-lime-300 " onClick={()=> setIsOpen ((prev) => !prev)}>
+ <li className="flex justify-center items-center w-[180px] rounded-3xl hover:bg-gray-300 active:bg-lime-300 " onClick={openModal}>
         <img src={personIcon} alt="Person Icon" className="h-6 w-6" />
         <a href="#" className="text-black font-normal text-16 ml-[8px]  ">
           პიროვნება
@@ -71,6 +78,9 @@ const Services = () => {
   <img src={ArrowRightIcon} alt="arrow right" className="h-6 w-6 "/>
 </li>
     </ul>      
+   
+
+    {isOpen && <ServiceItems onClose={closeModal} />}
 
   </div>
 </div>
