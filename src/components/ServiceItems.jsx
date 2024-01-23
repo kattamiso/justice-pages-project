@@ -1,15 +1,15 @@
 import CancelIcon from "../../public/Icons/CancelIcon/CancelIcon.svg"
 import SearchIcon from "../../public/Icons/SearchIcon/SearchIcon.svg"
 import DeleteIcon from "../../public/Icons/DeleteIcon/DeleteIcon.svg"
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import {useState} from "react"
 
-const ServiceItems = () => {
-    const [searchQuery, setSearchQuery] = useState('');
-  
-    const handleCancelClick = () => {
-      setSearchQuery('');
-    };
+const ServiceItems = ({ onClose }) => {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleCancelClick = () => {
+    setSearchQuery('');
+    onClose();
+  };
   
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">

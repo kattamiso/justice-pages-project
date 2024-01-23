@@ -84,7 +84,7 @@ const Services = () => {
 
   </div>
 </div>
-</div>{isOpen && <ServiceItems />}
+</div>
 
 
   </div>
