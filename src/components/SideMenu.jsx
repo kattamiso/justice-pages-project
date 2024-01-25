@@ -6,43 +6,25 @@ import enforcementIcon from '../../public/Icons/EnforcementIcon/EnforcementIcon.
 import archiveIcon from '../../public/Icons/ArchiveIcon/ArchiveIcon.svg';
 import networkIcon from '../../public/Icons/NetworkIcon/NetworkIcon.svg';
 import ArrowRightIcon from '../../public/Icons/ArrowRight/ArrowRightIcon.svg';
-import ServiceItems from './ServiceItems';
 import '../../src/index.css';
 
 const SideMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isSideMenuClose, setIsSideMenuClose] = useState(false);
 
-  const openModal = () => {
-    setIsOpen(true);
-  };
 
-  const closeModal = () => {
-    setIsOpen(false);
-  };
+  const openServices = () => {
+    setIsSideMenuClose(true);
+  }
 
   return (
     <div className="menu-container">
-      <style>
-        {`
-          @keyframes moveToLeft {
-            0% {
-              transform: translateX(1300px);
-            }
-            100% {
-              transform: translateX(0px);
-            }
-          }
-        `}
-      </style>
-
+     
+     {/* {isSideMenuClose && <Services onClick={closeSideMenu} />} */}
+     <div className={`menu-container ${isSideMenuClose ? 'slide-in-right' : ''}`}>
       <ul
-        className="menu-list flex mt-14 shadow-md h-[60px] w-[1194px]  absolute justify-center items-center border-radius-24  bg-white"
-        style={{
-          animation: 'moveToLeft 1s ease-in-out',
-          animationDelay: '10ms',
-        }}
+        className="menu-list slide-in-left flex mt-14 shadow-md h-[60px] w-[1194px]  absolute justify-center items-center border-radius-24  bg-white"
       >
-        <li className="flex p-[10px] justify-center items-center w-[180px] rounded-3xl hover:bg-gray-300 active:bg-lime-300 " onClick={openModal}>
+        <li className="flex p-[10px] justify-center items-center w-[180px] rounded-3xl hover:bg-gray-300 active:bg-lime-300 " onClick={openServices}>
           <img src={personIcon} alt="Person Icon" className="h-6 w-6" />
           <a href="#" className="text-black font-normal text-16 ml-[8px]  ">
             უკან
@@ -84,9 +66,9 @@ const SideMenu = () => {
           </a>
           <img src={ArrowRightIcon} alt="arrow right" className="h-6 w-6 " />
         </li>
-      </ul>
 
-      {isOpen && <ServiceItems onClose={closeModal} />}
+      </ul>
+</div>
     </div>
   );
 };

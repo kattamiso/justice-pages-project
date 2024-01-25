@@ -14,6 +14,8 @@ import '../../src/index.css';
 const Services = () => {
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
+
 
   const openModal = () => {
     setIsOpen(true);
@@ -22,6 +24,11 @@ const Services = () => {
   const closeModal = () => {
     setIsOpen(false);
   };
+
+  const openSideMenu = () => {
+    setIsSideMenuOpen(true);
+  };
+ 
 
   return (
     <div className="py-[250px] px-[200px] justify-items-end bg-[url('../../public/Icons/FrameImageSvg/Frame.svg')] bg-right-bottom min-h-screen bg-no-repeat max-w-[2200px]">
@@ -39,7 +46,8 @@ const Services = () => {
               ხარისხით მიწოდება
             </span>
           </div>
-<SideMenu/>
+
+          {isSideMenuOpen && <SideMenu onClick={openSideMenu} />}
           <div className="flex mt-14 shadow-md h-[60px] w-[1194px]  flex-col justify-center items-center  border-radius-24 bg-opacity-50 bg-white ">
             <div className="flex  p-[4px] h-[52px] items-start self-stretch rounded-3xl bg-white ">
             
@@ -95,6 +103,7 @@ const Services = () => {
                 </li>
                 <li
                   className="flex p-[10px] w-[100px] justify-center rounded-3xl items-center hover:bg-gray-300 active:bg-lime-300"
+                  onClick={openSideMenu}
                 >
                   <a href="#" className="text-black font-normal ml-[8px] text-16  ">
                     მეტი
@@ -105,7 +114,9 @@ const Services = () => {
 
               {isOpen && <ServiceItems onClose={closeModal} />}
             </div>
+            
           </div>
+
         </div>
       </div>
     </div>
